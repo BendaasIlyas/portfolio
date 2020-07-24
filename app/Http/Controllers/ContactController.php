@@ -15,6 +15,7 @@ class ContactController extends Controller
         'name' => $request->get('name'),
         'email' => $request->get('email'),
         'phone' => $request->get('phone'),
+        'subject' => $request->get('subject'),
         'message' => $request->get('message')
       ]);
 

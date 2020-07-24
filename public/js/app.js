@@ -1981,6 +1981,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -1993,6 +1997,7 @@ __webpack_require__.r(__webpack_exports__);
         name: '',
         email: '',
         phone: '',
+        subject: '',
         message: ''
       };
     },
@@ -39001,6 +39006,32 @@ var render = function() {
                   return
                 }
                 _vm.$set(_vm.contact, "phone", $event.target.value)
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("label", [_vm._v("Subject")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.contact.subject,
+                expression: "contact.subject"
+              }
+            ],
+            staticClass: "form-control",
+            attrs: { type: "text", name: "subject" },
+            domProps: { value: _vm.contact.subject },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.contact, "subject", $event.target.value)
               }
             }
           })

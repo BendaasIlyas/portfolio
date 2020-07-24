@@ -15,6 +15,10 @@
         <input v-model="contact.phone" type="text" name="phone" class="form-control">
       </div>
       <div class="form-group">
+        <label>Subject</label>
+        <input v-model="contact.subject" type="text" name="subject" class="form-control">
+      </div>
+      <div class="form-group">
         <label>Message</label>
         <input v-model="contact.message" type="text" name="message" class="form-control">
       </div>
@@ -38,6 +42,7 @@
         name: '',
         email: '',
         phone: '',
+        subject: '',
         message: ''
       }
       },  
