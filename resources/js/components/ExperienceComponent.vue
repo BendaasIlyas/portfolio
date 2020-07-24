@@ -1,21 +1,53 @@
 <template>
-  <div class="row justify-content-center">
-      <div class="col-md-8">
-          <div class="card card-default">
-              <div class="card-header">Home Component</div>
-
-              <div class="card-body">
-                  I'm the Experience Component component.
-              </div>
+  <div>
+      <h1>Experience</h1>
+        <div class="row">
+          <div class="col-md-10"></div>
+          <div class="col-md-2">
+            <router-link :to="{ name: 'create' }" class="btn btn-primary">Create New Experience</router-link>
           </div>
-      </div>
+        </div><br />
+
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Post Name</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Company Name</th>
+                <th>Mission</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr v-for="post in experiences" :key="post.id">
+                    <td>{{ post.id }}</td>
+                    <td>{{ post.title }}</td>
+                    <td>{{ post.start_date }}</td>
+                    <td>{{ post.end_date }}</td>
+                    <td>{{ post.company }}</td>
+                    <td>{{ post.mission }}</td>
+                    <td><router-link :to="{name: 'edit', params: { id: post.id }}" class="btn btn-primary">Edit</router-link></td>
+                    <td><button class="btn btn-danger">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
   </div>
 </template>
 
 <script>
-    export default {
-        mounted() {
-            console.log('Component mounted.')
+  export default {
+      data() {
+        return {
+          posts: []
         }
+      },
+      created() {
+      let uri = 'http://posrtfolio.test/api/experiences';
+      this.axios.get(uri).then(response => {
+        this.posts = response.data.data;
+      });
     }
+  }
 </script>
