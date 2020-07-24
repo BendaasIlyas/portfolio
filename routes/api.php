@@ -17,3 +17,15 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('/experience/create', 'ExperienceController@store');
+Route::get('/experience/edit/{id}', 'ExperienceController@edit');
+Route::post('/experience/update/{id}', 'ExperienceController@update');
+Route::delete('/experience/delete/{id}', 'ExperienceController@delete');
+Route::get('/experiences', 'ExperienceController@index');
+
+Route::post('/education/create', 'EducationController@store');
+Route::get('/education/edit/{id}', 'EducationController@edit');
+Route::post('/education/update/{id}', 'EducationController@update');
+Route::delete('/education/delete/{id}', 'EducationController@delete');
+Route::get('/educations', 'EducationController@index');
