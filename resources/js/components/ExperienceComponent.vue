@@ -48,6 +48,16 @@
       this.axios.get(uri).then(response => {
         this.posts = response.data.data;
       });
-    }
+      },
+      methods: {
+        deletePost(id)
+        {
+            let uri = `http://portfolio.test/api/experience/delete/${id}`;
+            this.axios.delete(uri).then(response => {
+            this.posts.splice(this.posts.indexOf(id), 1);
+            });
+        }
+      }
+    
   }
 </script>

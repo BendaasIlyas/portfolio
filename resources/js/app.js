@@ -22,7 +22,8 @@ import HomeComponent from './components/HomeComponent.vue';
 import EducationComponent from './components/EducationComponent.vue';
 import ExperienceComponent from './components/ExperienceComponent.vue';
 import ContactComponent from './components/ContactComponent.vue';
-import EditComponent from './components/EditComponent.vue';
+import EditExperienceComponent from './components/EditExperienceComponent.vue';
+import EditEducationComponent from './components/EditEducationComponent.vue';
 
 const routes = [
   {
@@ -46,9 +47,14 @@ const routes = [
       component: ContactComponent
   },
   {
-      name: 'edit',
-      path: '/edit/:id',
-      component: EditComponent
+      name: 'editexperience',
+      path: '/editexperience/:id',
+      component: EditExperienceComponent
+  },
+  {
+      name: 'editeducation',
+      path: '/editeducation/:id',
+      component: EditEducationComponent
   }
 ];
 
