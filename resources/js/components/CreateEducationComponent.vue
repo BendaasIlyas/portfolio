@@ -60,7 +60,7 @@
       addPost(){
         let uri = 'http://portfolio.test/api/education/create';
         this.axios.post(uri, this.post).then((response) => {
-        this.$router.push({name: 'posts'});
+        this.$router.push({name: 'educations'});
     });
 }
     }

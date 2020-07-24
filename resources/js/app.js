@@ -24,6 +24,8 @@ import ExperienceComponent from './components/ExperienceComponent.vue';
 import ContactComponent from './components/ContactComponent.vue';
 import EditExperienceComponent from './components/EditExperienceComponent.vue';
 import EditEducationComponent from './components/EditEducationComponent.vue';
+import CreateExperienceComponent from './components/CreateExperienceComponent.vue';
+import CreateEducationComponent from './components/CreateEducationComponent.vue';
 
 const routes = [
   {
@@ -47,14 +49,24 @@ const routes = [
       component: ContactComponent
   },
   {
-      name: 'editexperience',
-      path: '/editexperience/:id',
+      name: 'editex',
+      path: '/experience/edit/:id',
       component: EditExperienceComponent
   },
   {
-      name: 'editeducation',
-      path: '/editeducation/:id',
+      name: 'edited',
+      path: '/education/edit/:id',
       component: EditEducationComponent
+  },
+  {
+    name: 'createex',
+    path: '/experience/create',
+    component: CreateExperienceComponent
+  },
+  {
+    name: 'createed',
+    path: '/education/create',
+    component: CreateEducationComponent
   }
 ];
 

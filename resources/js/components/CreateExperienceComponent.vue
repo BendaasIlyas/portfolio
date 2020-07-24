@@ -58,11 +58,11 @@
     },
     methods: {
       addPost(){
-        let uri = 'http://portfolio.test/api/experience/create';
-        this.axios.post(uri, this.post).then((response) => {
-        this.$router.push({name: 'posts'});
-    });
-}
+            let uri = 'http://portfolio.test/api/experience/create';
+            this.axios.post(uri, this.post).then((response) => {
+            this.$router.push({name: 'experiences'});
+        });
+      }
     }
   }
 </script>
