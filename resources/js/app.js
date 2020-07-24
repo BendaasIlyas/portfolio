@@ -15,6 +15,42 @@ import VueAxios from 'vue-axios';
 import axios from 'axios';
 Vue.use(VueAxios, axios);
 
+import App from './App.vue';
+Vue.use(VueAxios, axios);
+
+import HomeComponent from './components/HomeComponent.vue';
+import EducationComponent from './components/EducationComponent.vue';
+import ExperienceComponent from './components/ExperienceComponent.vue';
+import ContactComponent from './components/ContactComponent.vue';
+import EditComponent from './components/EditComponent.vue';
+
+const routes = [
+  {
+      name: 'home',
+      path: '/',
+      component: HomeComponent
+  },
+  {
+      name: 'experience',
+      path: '/experience',
+      component: ExperienceComponent
+  },
+  {
+      name: 'education',
+      path: '/education',
+      component: EducationComponent
+  },
+  {
+      name: 'contact',
+      path: '/contact',
+      component: ContactComponent
+  },
+  {
+      name: 'edit',
+      path: '/edit/:id',
+      component: EditComponent
+  }
+];
 
 /**
  * The following block of code may be used to automatically register your
@@ -39,5 +75,5 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 //     el: '#app',
 // });
 
-const router = new VueRouter({ mode: 'history'});
-const app = new Vue(Vue.util.extend({ router })).$mount('#app');
+const router = new VueRouter({ mode: 'history', routes: routes});
+const app = new Vue(Vue.util.extend({ router }, App)).$mount('#app');
