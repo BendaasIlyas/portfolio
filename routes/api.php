@@ -29,3 +29,5 @@ Route::get('/education/edit/{id}', 'EducationController@edit');
 Route::post('/education/update/{id}', 'EducationController@update');
 Route::delete('/education/delete/{id}', 'EducationController@delete');
 Route::get('/educations', 'EducationController@index');
+
+Route::post('/contact', 'ContactController@store');
