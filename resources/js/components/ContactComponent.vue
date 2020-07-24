@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Contacts</h1>
+    <h1>Contact Me</h1>
     <form @submit.prevent="createContact">
       <div class="form-group">
         <label>Name</label>
@@ -29,17 +29,24 @@
   export default {
     data(){
       return {
-        contact:{}
+        contact:this.getBasicForm()
       }
     },
-    mounted: function(){
-      console.log('Contacts Component Loaded...');
-    },
     methods: {
+      getBasicForm() {
+      return {
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
+      }
+      },  
       createContact: function(){
+            let contact = this.contact;
             let uri = 'http://portfolio.test/api/contact';
             this.axios.post(uri, this.contact).then((response) => {
             this.$router.push({name: 'contact'});
+            this.contact = this.getBasicForm();
       });
     }
     }

@@ -1984,21 +1984,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      contact: {}
+      contact: this.getBasicForm()
     };
   },
-  mounted: function mounted() {
-    console.log('Contacts Component Loaded...');
-  },
   methods: {
+    getBasicForm: function getBasicForm() {
+      return {
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
+      };
+    },
     createContact: function createContact() {
       var _this = this;
 
+      var contact = this.contact;
       var uri = 'http://portfolio.test/api/contact';
       this.axios.post(uri, this.contact).then(function (response) {
         _this.$router.push({
           name: 'contact'
         });
+
+        _this.contact = _this.getBasicForm();
       });
     }
   }
@@ -38907,7 +38915,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h1", [_vm._v("Contacts")]),
+    _c("h1", [_vm._v("Contact Me")]),
     _vm._v(" "),
     _c(
       "form",
